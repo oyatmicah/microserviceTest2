@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  notifications-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8001:9000"
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      COMPOSER_MEMORY_LIMIT: -1
